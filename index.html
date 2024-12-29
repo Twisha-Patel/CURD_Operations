@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Challenge</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="./js/index.js" type="text/javascript"></script>
+    <script src="./js/jquery.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <nav>
+      <h1>Book Registration Form</h1>
+    </nav>
+
+    <div class="container">
+      <div class="form-section">
+        <form id="bookForm">
+          <input type="hidden" id="rowid" name="rowid" />
+          <label for="bookTitle">Book Title</label>
+          <input
+            type="text"
+            id="bookTitle"
+            name="bookTitle"
+            placeholder="Enter Book Title"
+            required
+          />
+
+          <label for="author">Author</label>
+          <input
+            type="text"
+            id="author"
+            name="author"
+            placeholder="Enter Author Name"
+            required
+          />
+
+          <label for="totalPages">Total Pages</label>
+          <input
+            type="number"
+            id="totalPages"
+            name="totalPages"
+            placeholder="Enter Total Pages"
+            required
+          />
+
+          <label for="price">Price</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            placeholder="Enter Price"
+            required
+          />
+
+          <button type="button" onclick="submitData()" id="submitBtn">
+            Submit
+          </button>
+          <button type="button" onclick="resetData()" class="reset-btn">
+            Reset
+          </button>
+        </form>
+      </div>
+
+      <div class="table-section">
+        <h2>Book Records</h2>
+        <!-- Search Bar -->
+        <div id="search-bar" class="search-bar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by title or author..."
+            onkeyup="searchData()"
+          />
+        </div>
+        <table id="bookTable">
+          <thead>
+            <tr>
+              <th onclick="sortData('bookId')">#</th>
+              <th onclick="sortData('bookTitle')">Book Title</th>
+              <th onclick="sortData('author')">Author</th>
+              <th onclick="sortData('totalPages')">Total Pages</th>
+              <th onclick="sortData('price')">Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="table-data">
+            <!-- Data rows will go here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
